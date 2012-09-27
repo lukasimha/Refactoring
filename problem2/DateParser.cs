@@ -34,11 +34,11 @@ namespace Refactoring
             } catch (FormatException) {
                 throw new Exception("Year is not an integer");
             }
-            if (year < 2000 || year > 2012)
+            if (year < 2000 || year > 2013)
                 throw new Exception("Year cannot be less than 2000 or more than 2012");
 
             try {
-                string monthString = dateAndTimeString.Substring(5, 7);
+                string monthString = dateAndTimeString.Substring(5, 2);
                 month = int.Parse(monthString);
             } catch (ArgumentOutOfRangeException) {
                 throw new Exception("Month string is less than 2 characters");
@@ -49,7 +49,7 @@ namespace Refactoring
                 throw new Exception("Month cannot be less than 1 or more than 12");
 
             try {
-                string dateString = dateAndTimeString.Substring(8, 10);
+                string dateString = dateAndTimeString.Substring(8, 2);
                 date = int.Parse(dateString);
             } catch (ArgumentOutOfRangeException) {
                 throw new Exception("Date string is less than 2 characters");
@@ -60,7 +60,7 @@ namespace Refactoring
                 throw new Exception("Date cannot be less than 1 or more than 31");
 
             try {
-                string hourString = dateAndTimeString.Substring(11, 13);
+                string hourString = dateAndTimeString.Substring(11, 2);
                 hour = int.Parse(hourString);
             } catch (ArgumentOutOfRangeException) {
                 throw new Exception("Hour string is less than 2 characters");
@@ -71,7 +71,7 @@ namespace Refactoring
                 throw new Exception("Hour cannot be less than 0 or more than 23");
 
             try {
-                string minuteString = dateAndTimeString.Substring(14, 16);
+                string minuteString = dateAndTimeString.Substring(14, 2);
                 minute = int.Parse(minuteString);
             } catch (ArgumentOutOfRangeException) {
                 throw new Exception("Minute string is less than 2 characters");
