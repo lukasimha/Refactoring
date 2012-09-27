@@ -179,7 +179,7 @@ namespace Refactoring
     
             Assert.AreEqual(2012, result.Year);
             Assert.AreEqual(12, result.Month);
-            Assert.AreEqual(3, result.Date);
+            Assert.AreEqual(31, result.Day);
         }
     }
 }
